@@ -1,0 +1,57 @@
+'''
+Serializer for Photos app
+'''
+from rest_framework import serializers
+from .models import Photo
+
+
+class PhotoSerializer(serializers.ModelSerializer):
+    '''
+    Photo serialize with read only
+    '''
+    owner = serializers.ReadOnlyField(source='owner.username')
+    is_owner = serializers.SerializerMethodField()
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+
+    def validate_photo_image(self, value):
+        '''
+        Validate upload photo image
+        '''
+        if value.size > 1024 * 1024 * 2:
+            raise serializers.ValidationError(
+                'Image size larger than 2MB!'
+            )
+        if value.image.width > 4096:
+            raise serializers.ValidationError(
+                'Image width larger than 4096px'
+            )
+        if value.image.height > 4096:
+            raise serializers.ValidationError(
+                'Image height larger than 4096px'
+            )
+        return value
+
+    def get_is_owner(self, obj):
+        '''
+        Get is_owner method
+        '''
+        request = self.context['request']
+        return request.user == obj.owner
+
+    class Meta:
+        '''
+        Set photo fields
+        '''
+        model = Photo
+        fields = [
+            'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
+            'album', 'created_at', 'updated_at', 'title', 'photo_image',
+        ]
+
+
+class PhotoDetailSerializer(PhotoSerializer):
+    '''
+    Detail serializer
+    '''
+    album = serializers.ReadOnlyField(source='album.id')
