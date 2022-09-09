@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('albums.urls')),
     path('', include('photos.urls')),
+    path('', include('comments.urls')),
 ]
