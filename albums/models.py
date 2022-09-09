@@ -1,3 +1,6 @@
+'''
+Albums app
+'''
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,17 +11,20 @@ class Album(models.Model):
     Default cover image set so that we can always reference image.url.
     """
     category_filter_choices = [
-        ('wedding', 'Wedding'),
-        ('portrait', 'Portrait'),
-        ('landscape', 'Landscape'),
-        ('baby', 'Baby'),
-        ('animals', 'Animals'),
         ('general', 'General'),
+        ('animals', 'Animals'),
+        ('architecture', 'Architecture'),
+        ('baby', 'Baby'),
+        ('commercial', 'Commercial'),
+        ('fashion', 'Fashion'),
+        ('landscape', 'Landscape'),
+        ('portrait', 'Portrait'),
+        ('wedding', 'Wedding'),
+        ('sports', 'Sports'),      
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    category = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     cover_image = models.ImageField(
