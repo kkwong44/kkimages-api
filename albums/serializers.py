@@ -2,6 +2,7 @@
 Serializer for Albums app
 '''
 from rest_framework import serializers
+from likes.models import Like
 from .models import Album
 
 
@@ -13,6 +14,7 @@ class AlbumSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    like_id = serializers.SerializerMethodField()
 
     def validate_cover_image(self, value):
         '''
@@ -39,6 +41,18 @@ class AlbumSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
+    def get_like_id(self, obj):
+        '''
+        Check and return like id
+        '''
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = Like.objects.filter(
+                owner=user, album=obj
+            ).first()
+            return like.id if like else None
+        return None
+
     class Meta:
         '''
         Set album fields
@@ -47,5 +61,5 @@ class AlbumSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'created_at', 'updated_at', 'title', 'content',
-            'cover_image', 'category_filter',
+            'cover_image', 'category_filter', 'like_id',
         ]
