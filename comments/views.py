@@ -34,6 +34,6 @@ class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
     Generic views to edit and delete comments
     '''
-    permissions_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = CommentDetailSerializer
     queryset = Comment.objects.all()

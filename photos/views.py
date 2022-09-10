@@ -34,6 +34,6 @@ class PhotoDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
     Generic views to edit and delete photos
     '''
-    permissions_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PhotoDetailSerializer
     queryset = Photo.objects.all()
