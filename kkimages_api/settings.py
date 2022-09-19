@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import re
 import dj_database_url
 
 if os.path.exists('env.py'):
@@ -64,7 +65,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    'kkimages-drf-api.herokuapp.com',
+    os.environ.get('ALLOWED_HOST'),
     'localhost',
 ]
 
