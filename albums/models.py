@@ -11,16 +11,16 @@ class Album(models.Model):
     Default cover image set so that we can always reference image.url.
     """
     category_filter_choices = [
-        ('general', 'General'),
-        ('animals', 'Animals'),
-        ('architecture', 'Architecture'),
-        ('baby', 'Baby'),
-        ('commercial', 'Commercial'),
-        ('fashion', 'Fashion'),
-        ('landscape', 'Landscape'),
-        ('portrait', 'Portrait'),
-        ('wedding', 'Wedding'),
-        ('sports', 'Sports'),      
+        ('General', 'General'),
+        ('Animals', 'Animals'),
+        ('Architecture', 'Architecture'),
+        ('Baby', 'Baby'),
+        ('Commercial', 'Commercial'),
+        ('Fashion', 'Fashion'),
+        ('Landscape', 'Landscape'),
+        ('Portrait', 'Portrait'),
+        ('Wedding', 'Wedding'),
+        ('Sports', 'Sports'),      
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -31,7 +31,7 @@ class Album(models.Model):
         upload_to='kkimages/', default='../default_post_liudmg', blank=True
     )
     category_filter = models.CharField(
-        max_length=32, choices=category_filter_choices, default='general')
+        max_length=32, choices=category_filter_choices, default='General')
 
     class Meta:
         '''

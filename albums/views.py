@@ -21,7 +21,7 @@ class AlbumList(generics.ListCreateAPIView):
         likes_count=Count('likes', distinct=True),
         comments_count=Count('comment', distinct=True),
         photos_count=Count('photo', distinct=True),
-    ).order_by('created_at')
+    ).order_by('-updated_at', '-created_at')
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
@@ -36,6 +36,7 @@ class AlbumList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'category_filter',
     ]
     ordering_fields = [
         'likes_count',
