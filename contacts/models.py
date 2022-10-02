@@ -8,6 +8,7 @@ class Contact(models.Model):
     '''
     Setting up Contact model
     '''
+    depart_id = models.IntegerField(unique=True)
     department = models.CharField(max_length=255, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -23,7 +24,7 @@ class Contact(models.Model):
         '''
         Order by creation date in decending order
         '''
-        ordering = ['-created_at']
+        ordering = ['depart_id']
 
     def __str__(self):
         '''

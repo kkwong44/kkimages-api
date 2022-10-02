@@ -16,6 +16,7 @@ class ContactSerializer(serializers.ModelSerializer):
         '''
         model = Contact
         fields = [
-            'id', 'department', 'created_at', 'updated_at', 'contact',
-            'address', 'town', 'county', 'postcode', 'telephone', 'email',
+            'id', 'depart_id', 'department', 'created_at', 'updated_at',
+            'contact', 'address', 'town', 'county', 'postcode', 'telephone',
+            'email',
         ]
