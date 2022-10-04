@@ -11,7 +11,6 @@ class ProfileSerializer(serializers.ModelSerializer):
     Profile serialize with read only
     '''
     owner = serializers.ReadOnlyField(source='owner.username')
-    staff = serializers.ReadOnlyField(source='owner.is_staff')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
     albums_count = serializers.ReadOnlyField()

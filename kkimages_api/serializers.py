@@ -11,7 +11,7 @@ class CurrentUserSerializer(UserDetailsSerializer):
     '''
     profile_id = serializers.ReadOnlyField(source='profile.id')
     profile_image = serializers.ReadOnlyField(source='profile.image.url')
-    staff = serializers.ReadOnlyField(source='owner.is_staff')
+    staff = serializers.ReadOnlyField(source='profile.staff')
 
     class Meta(UserDetailsSerializer.Meta):
         '''
