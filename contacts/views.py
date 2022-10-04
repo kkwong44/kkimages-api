@@ -27,6 +27,6 @@ class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
     Generic views to edit and delete contact
     '''
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()
