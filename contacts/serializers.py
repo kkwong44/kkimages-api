@@ -10,7 +10,6 @@ class ContactSerializer(serializers.ModelSerializer):
     Contact serialize with read only
     '''
     owner = serializers.ReadOnlyField(source='owner.username')
-    staff = serializers.ReadOnlyField(source='owner.is_staff')
 
     class Meta:
         '''
@@ -20,5 +19,5 @@ class ContactSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'depart_id', 'department', 'created_at',
             'updated_at', 'contact', 'address', 'town', 'county',
-            'postcode', 'telephone', 'email', 'staff',
+            'postcode', 'telephone', 'email',
         ]
