@@ -2,12 +2,14 @@
 Import libraries for Contacts App
 """
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
     '''
     Setting up Contact model
     '''
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     depart_id = models.IntegerField(unique=True)
     department = models.CharField(max_length=255, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
