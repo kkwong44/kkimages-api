@@ -64,6 +64,6 @@ class AlbumSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
             'created_at', 'updated_at', 'title', 'content',
-            'cover_image', 'category_filter', 'like_id',
+            'skill_level', 'cover_image', 'category_filter', 'like_id',
             'likes_count', 'comments_count', 'photos_count',
         ]

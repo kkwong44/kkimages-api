@@ -17,16 +17,19 @@ class Album(models.Model):
         ('Baby', 'Baby'),
         ('Commercial', 'Commercial'),
         ('Fashion', 'Fashion'),
+        ('Food', 'Food'),
         ('Landscape', 'Landscape'),
         ('Portrait', 'Portrait'),
+        ('Sports', 'Sports'),
+        ('Travel', 'Travel'),
         ('Wedding', 'Wedding'),
-        ('Sports', 'Sports'),      
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    skill_level = models.CharField(max_length=255)
     cover_image = models.ImageField(
         upload_to='kkimages/', default='../default_post_liudmg', blank=True
     )
