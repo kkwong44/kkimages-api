@@ -320,7 +320,120 @@ This application can be developed further in future with the following addition 
 * The contact list can be extended to hold photographer details and allow user to search photographer by location and experiences.
 
 ---
+### PEP8 Checker
+
+pep8 is a tool to check Python code against some of the style conventions in PEP 8. Unfortunately, pep8 online checker was not available at the time of this project. Thanks for Code Institute to provide a workaround solution. Followed the instruction from code institute all codes have been passed the checker as show below. 
+
+![Conatct](readme/test-results/pep8-results.png)
+
+---
 ## Testing
+
+Both manual and automated testing have been carried out in the project.
+
+### Automated Testing
+
+The following are the test cases and the test scripts can be found in the source tests directory in each app:
+
+All test ran successfully.
+
+1 Test cases for albums
+* Test Case 1: can list albums
+* Test Case 2: logged in user can create album
+* Test Case 3: logged in user can create album with upload image
+* Test Case 4: logged out user can't create album
+* Test Case 5: can retrieve album using valid id
+* Test Case 6: can't retrieve album using invalid id
+* Test Case 7: user can update own album
+* Test Case 8: user can't update another user album
+* Test Case 9: logged out user can't update album
+* Test Case 10: user can delete own album
+* Test Case 11: user can't delete another user album
+* Test Case 12: logged out user can't delete album
+* Test Case 13: user can delete own album and contents
+
+2 Test cases for comments
+* Test Case 1: can list comments
+* Test Case 2: logged in user can create comment
+* Test Case 3: logged out user can't create comment
+* Test Case 4: can retrieve comment using valid id
+* Test Case 5: can't retrieve comment using invalid id
+* Test Case 6: user can update own comment
+* Test Case 7: user can't update another user comment
+* Test Case 8: logged out user can't update comment
+
+3 Test cases for contacts
+* Test Case 1: can list contacts
+* Test Case 2: can retrieve contact using valid id
+* Test Case 3: can't retrieve contact using invalid id
+* Test Case 4: admin can update contact
+* Test Case 5: user can't update admin contacts
+* Test Case 6: logged out user can't update contact
+* Test Case 7: user can delete own contact
+* Test Case 8: user can't delete another user contact
+* Test Case 9: logged out user can't delete contact
+
+4 Test cases for followers
+* Test Case 1: can list followers
+* Test Case 2: logged in user can follow
+* Test Case 3: logged in user can follow multiple
+* Test Case 4: can retrieve followers using valid id
+* Test Case 5: can't retrieve followers using invalid id
+* Test Case 6: user can unfollow users
+* Test Case 7: user can't unfollow another user followers
+* Test Case 8: logged out user can't unfollow user
+
+5 Test cases for likes
+* Test Case 1: can list likes
+* Test Case 2: logged in user can create like
+* Test Case 3: logged out user can't create like
+* Test Case 4: can retrieve like using valid id
+* Test Case 5: can't retrieve like using invalid id
+* Test Case 6: user can delete own like
+* Test Case 7: user can't delete another user like
+* Test Case 8: logged out user can't delete like
+
+6 Test cases for photos
+* Test Case 1: can list photos
+* Test Case 2: logged in user can create photo
+* Test Case 3: logged out user can't create photo
+* Test Case 4: can retrieve photo using valid id
+* Test Case 5: can't retrieve photo using invalid id
+* Test Case 6: user can update own photo
+* Test Case 7: user can't update another user photo
+* Test Case 8: logged out user can't update photo
+* Test Case 9: user can delete own photo
+* Test Case 10: user can't delete another user photo
+* Test Case 11: logged out user can't delete photo
+
+7 Test cases for profiles
+* Test Case 1: can list profiles
+* Test Case 2: logged out user can login
+* Test Case 3: inavalid login
+* Test Case 4: can retrieve profile using valid id
+* Test Case 5: can't retrieve profile using invalid id
+* Test Case 6: user can update own profile
+* Test Case 7: user can't update other user profile
+* Test Case 8: logged out user can't update profile
+* Test Case 9: user can delete own profile
+* Test Case 10: user can't delete another user profile
+* Test Case 11: logged out user can't delete profile
+
+*Test results for all 68 test cases*
+
+![Conatct](readme/test-results/api-auto-tests.png)
+
+### Manual Testing
+
+The following manual tests have been carried out in the deployed environment to ensure the application is running as expected. The below test reports show all tests have been carried out and passed.
+
+![Test Report 1](readme/test-results/api-manual-testing-1.jpg)
+![Test Report 2](readme/test-results/api-manual-testing-2.jpg)
+![Test Report 3](readme/test-results/api-manual-testing-3.jpg)
+![Test Report 4](readme/test-results/api-manual-testing-4.jpg)
+![Test Report 5](readme/test-results/api-manual-testing-5.jpg)
+![Test Report 6](readme/test-results/api-manual-testing-6.jpg)
+![Test Report 7](readme/test-results/api-manual-testing-7.jpg)
 
 ---
 ## Bugs
