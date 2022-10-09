@@ -8,7 +8,7 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
 
 *Screenshot - Mockup on KKImages App, generated from [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)*
 
-![Screenshot on Mockup](readme/images/mockup.png) ***To be filled in
+![Screenshot on Mockup](readme/images/site-mockup.png)
 
 ---
 ### Objectives
@@ -37,13 +37,13 @@ The target audients are split into photographers and general users.
 ---
 ## Application Design
 
-This part of the project is to design the backend database to provide and store data for the application. As mentioned in the objectives, the backend will be built using Drangon Rest Framework.
+This part of the project is to design the backend database to provide and store data for the application. As mentioned in the objectives, the backend will be built using Django Rest Framework.
 
 ### Initial Database Design
 
 The models of the database design have been adapted and modified from the Code Institute Django Rest Framework API Moment project.
 
-There are 7 tables - User, Profile, Album, Photo, Comment, Like and Follower.
+There are 8 tables - User, Profile, Album, Photo, Comment, Like, Follower and Contact.
 
 *Database Deisgn*
 ![Database Design](readme/images/database-models.jpg)
@@ -56,13 +56,23 @@ The design has broken down into User Stories and grouped into Epics. Each User S
 
 #### User Stories
 
-***To be filled in
+There are 16 user stories identified for the backend at the beginning of the project and they were grouped into 5 Epics as listed in the table below
+
+**[User Stories Full Detailed Report (Click to view)](readme/user-stories/user-stories.md#user-stories)**
+
+*Summary of Epics and User Stories*
+
+![Summary of User Stories](readme/user-stories/api-user-stories-summary.jpg)
 
 #### Kanban Board
 
 In development, Kanban Board was used to schedule the execution of the user stories. This approach allows to allocating user stories by priority and monitoring each user story's progress.
 
 The Kanban board below shows all the user stories were initially in the 'To Do' list column. Then at different stage of the development, each one is moved into 'In Progress' column and finally into 'Done' column when it has completed. All user stories that are not included in this iteration are moved into 'Out of Current Scope' column.
+
+*Snapshot of the Kanban Board*
+
+![Kanban Board](readme/images/kanban-board.png)
 
 ---
 ## Features
