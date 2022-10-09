@@ -300,7 +300,7 @@ This app will be linked to the Django User model "owner". The purpose of this ap
 ![Conatct](readme/images/model-contact.jpg)
 
 Serialized and additional fields to this model
-* owner - following user id
+* owner - owner user id
 
 List View are created with the following:
 * To create new following

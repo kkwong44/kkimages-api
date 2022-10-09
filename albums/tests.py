@@ -34,7 +34,8 @@ class AlbumListViewTests(APITestCase):
         Logged in user can create albums with default image
         '''
         self.client.login(username='admin', password='pass')
-        response = self.client.post('/albums/', {'title': 'a title'})
+        response = self.client.post(
+            '/albums/', {'title': 'a title', 'skill_level': 'Other'})
         count = Album.objects.count()
         self.assertEqual(count, 1)
         album = Album.objects.filter(pk=1).first()
@@ -74,9 +75,11 @@ class AlbumDetailViewTests(APITestCase):
         admin = User.objects.create_user(username='admin', password='pass')
         user1 = User.objects.create_user(username='user1', password='pass')
         album1 = Album.objects.create(
-            owner=admin, title='a title', content='admin content')
+            owner=admin, title='a title', content='admin content',
+            skill_level='Other')
         album2 = Album.objects.create(
-            owner=user1, title='a title', content='user1 content')
+            owner=user1, title='a title', content='user1 content',
+            skill_level='Other')
         # Album's children items
         Photo.objects.create(owner=admin, album=album1, title='photo 1')
         Photo.objects.create(owner=admin, album=album1, title='photo 2')
@@ -107,7 +110,8 @@ class AlbumDetailViewTests(APITestCase):
         Edit own album
         '''
         self.client.login(username='admin', password='pass')
-        response = self.client.put('/albums/1', {'title': 'a new title'})
+        response = self.client.put(
+            '/albums/1', {'title': 'a new title', 'skill_level': 'Other'})
         album = Album.objects.filter(pk=1).first()
         self.assertEqual(album.title, 'a new title')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
