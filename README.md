@@ -75,6 +75,23 @@ The Kanban board below shows all the user stories were initially in the 'To Do' 
 ![Kanban Board](readme/images/kanban-board.png)
 
 ---
+## Project Requirements
+
+This project has been developed using Python Django, Bootstrap and Deployed in Heroku. The following are the project requirements in order to run the application.
+
+* Django Rest Framework - a high-level Python web framework
+* Gunicorn - a Web Server Gateway Interface (WSGI) to run Python web applications
+* dj_databases_url - a simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application
+* Psycopg2 - PostgreSQL database adapter for the Python programming language
+* Pillow - Image processing
+* Cloudinary - Online platform to store images for this application
+* dj3_cloudinary_storage - Django package that facilitates integration with Cloudinary by implementing Django Storage API.
+* PostgreSQL - an open source object-relational database system
+* Django allauth - integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+* Heroku - a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
+* Bootstrap v4 - an open-source CSS framework directed at responsive, mobile-first front-end web development.
+
+---
 ## Features
 
 The aim for this part of the project is to develop a backend for the KKImages application to serve the frontend to be developed separately.
@@ -438,14 +455,46 @@ The following manual tests have been carried out in the deployed environment to 
 ---
 ## Bugs
 
+No bugs have been found before deplyment.
+
 ---
 ## Deployment
+
+This is a Django Rest Framework project and deployed in Heroku.
+
+At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running successfully in Heroku.
+
+The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
 
 ---
 ## Tools
 
+The tools used to carry out the development and deployment on this project are:
+* Gitpod and Github
+* Python modules
+* Django Rest Framework and libraries
+* Cloudinary
+* Webpage Screenshots - Chrome app extension (FireShot)
+* [Lucid Chart](https://www.lucidchart.com/) for creating flow chart
+* [PEP8 online checker](http://pep8online.com/) for code validation
+* [Heroku](https://id.heroku.com/login) for building, deploying, and managing apps
+* [Pixerbay](https://pixabay.com/) for images
+
 ---
 ## Credits
 
+* This project was inspired and adapted from Code Institute Django Rest Framework Moment project
+* [Template](https://github.com/Code-Institute-Org/gitpod-full-template) - created by Code Institute
+development framework for the creation of websites and web apps
+* [Djano Rest Framework](https://www.django-rest-framework.org/) - Home for Django Rest Framework
+* [Django Documentation](https://docs.djangoproject.com/en/4.0/) - for research and instructions
+* [Select Dropdown in React JS With Fetched Data From API](https://www.youtube.com/watch?v=1cYnbYVAi_E) - for create a select dropdown option
+* [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
+* [Code Institute](https://codeinstitute.net/) - Full Stack Framework tutorials
 ---
 ## Acknowledgment
+
+I would like to thank the following to support the development of this site.
+
+* Learning Support - Code Institute
+* Mentoring Support - Daisy McGirr
