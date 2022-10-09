@@ -11,6 +11,40 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
 ![Screenshot on Mockup](readme/images/site-mockup.png)
 
 ---
+## Table of Contents
+* [Objectives](#objectives)
+    * [Application Goal](#application-goals)
+    * [User Goals](#user-goals)
+* [Application Design](#application-design)
+    * [Initial Database Design](#initial-database-design)
+    * [Design Approach](#design-approach)
+        * [User Stories](#user-stories)
+        * [Kanban Board](#kanban-board)
+* [Project Requirements](#project-requirements)
+* [Features](#features)
+    * [Application Enviornment Setup](#application-environment-setup)
+    * [Profiles app](#profiles-app)
+    * [Albums app](#albums-app)
+    * [Photos app](#photos-app)
+    * [Comments app](#comments-app)
+    * [Likes app](#likes-app)
+    * [Followers app](#followers-app)
+    * [Contacts app](#contacts-app)
+* [Future Features](#future-features)
+* [PEP8 Checker](#pep8-checker)
+* [Testing](#testing)
+    * [Automated Testing](#automated-testing)
+    * [Manual Testing](#manual-testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+    * [Development tools](#development-tools)
+    * [Development processes](#development-processes)
+    * [Steps for Setting up basic Django Project and Deploying to Heroku](#steps-for-setting-up-basic-django-project-and-deploying-to-heroku)
+* [Tools](#tools)
+* [Credits](#credits)
+* [Acknowledgment](#acknowledgment)
+
+---
 ## Objectives
 
 The main objective of this site is to provide a platform for photographers to showcase their works online. The frontend and backend of this site has been built separately and use React and Django Rest Framework for the frontend to access the backend API.
@@ -19,6 +53,9 @@ The target audients are split into photographers and general users.
 
 * Photographers – create and maintain photo albums
 * General user – view photo albums, follow photographers, like and leave comments to photo albums
+
+
+*[Back to Contents](#table-of-contents)*
 
 ### Application Goals
 
@@ -33,6 +70,8 @@ The target audients are split into photographers and general users.
 * Signup to create albums with photos.
 * Registered users can maintain their personal profile and albums.
 * Registered users can leave comments, like albums and follow other users.
+
+*[Back to Contents](#table-of-contents)*
 
 ---
 ## Application Design
@@ -74,6 +113,8 @@ The Kanban board below shows all the user stories were initially in the 'To Do' 
 
 ![Kanban Board](readme/images/kanban-board.png)
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Project Requirements
 
@@ -90,6 +131,8 @@ This project has been developed using Python Django, Bootstrap and Deployed in H
 * Django allauth - integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 * Heroku - a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
 * Bootstrap v4 - an open-source CSS framework directed at responsive, mobile-first front-end web development.
+
+*[Back to Contents](#table-of-contents)*
 
 ---
 ## Features
@@ -328,6 +371,8 @@ Detail view created for
 
 ***[User Story #13 Create app for contacts](readme/user-stories/api-user-stories-13.jpg)***
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Future Features
 
@@ -336,6 +381,8 @@ This application can be developed further in future with the following addition 
 * Individual photo can be edited by the owner
 * The contact list can be extended to hold photographer details and allow user to search photographer by location and experiences.
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ### PEP8 Checker
 
@@ -343,10 +390,16 @@ pep8 is a tool to check Python code against some of the style conventions in PEP
 
 ![Conatct](readme/test-results/pep8-results.png)
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Testing
 
 Both manual and automated testing have been carried out in the project.
+
+***[User Story #14 Create automated tests for apps](readme/user-stories/api-user-stories-15.jpg)***
+
+***[User Story #15 Create manual tests for apps](readme/user-stories/api-user-stories-15.jpg)***
 
 ### Automated Testing
 
@@ -452,10 +505,14 @@ The following manual tests have been carried out in the deployed environment to 
 ![Test Report 6](readme/test-results/api-manual-testing-6.jpg)
 ![Test Report 7](readme/test-results/api-manual-testing-7.jpg)
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Bugs
 
-No bugs have been found before deplyment.
+No bugs have been found before deployment.
+
+*[Back to Contents](#table-of-contents)*
 
 ---
 ## Deployment
@@ -465,6 +522,10 @@ This is a Django Rest Framework project and deployed in Heroku.
 At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running successfully in Heroku.
 
 The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
+
+***[User Story #16 Deploy final project to Heroku](readme/user-stories/api-user-stories-16.jpg)***
+
+*[Back to Contents](#table-of-contents)*
 
 ---
 ## Tools
@@ -480,6 +541,8 @@ The tools used to carry out the development and deployment on this project are:
 * [Heroku](https://id.heroku.com/login) for building, deploying, and managing apps
 * [Pixerbay](https://pixabay.com/) for images
 
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Credits
 
@@ -491,6 +554,9 @@ development framework for the creation of websites and web apps
 * [Select Dropdown in React JS With Fetched Data From API](https://www.youtube.com/watch?v=1cYnbYVAi_E) - for create a select dropdown option
 * [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
 * [Code Institute](https://codeinstitute.net/) - Full Stack Framework tutorials
+
+*[Back to Contents](#table-of-contents)*
+
 ---
 ## Acknowledgment
 
