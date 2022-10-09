@@ -1,5 +1,5 @@
 '''
-Test cases for likes
+Test cases for followers
 '''
 from rest_framework import status
 from rest_framework.test import APITestCase

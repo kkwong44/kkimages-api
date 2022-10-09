@@ -1,9 +1,5 @@
-# from django.test import TestCase
-
-# Create your tests here.
-
 '''
-Test cases for likes
+Test cases for profiles
 '''
 from rest_framework import status
 from rest_framework.test import APITestCase
