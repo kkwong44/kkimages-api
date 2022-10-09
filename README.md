@@ -37,9 +37,7 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
     * [Manual Testing](#manual-testing)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
-    * [Development tools](#development-tools)
-    * [Development processes](#development-processes)
-    * [Steps for Setting up basic Django Project and Deploying to Heroku](#steps-for-setting-up-basic-django-project-and-deploying-to-heroku)
+
 * [Tools](#tools)
 * [Credits](#credits)
 * [Acknowledgment](#acknowledgment)
@@ -522,6 +520,8 @@ This is a Django Rest Framework project and deployed in Heroku.
 At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running successfully in Heroku.
 
 The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
+
+It is import to check all settings and requirements before deploying the final version to Heroku. This is to ensure all security, debug mode are set correctly and allows the frontend to access to this site.
 
 ***[User Story #16 Deploy final project to Heroku](readme/user-stories/api-user-stories-16.jpg)***
 
