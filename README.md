@@ -13,7 +13,7 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
 ---
 ## Table of Contents
 * [Objectives](#objectives)
-    * [Application Goal](#application-goals)
+    * [Application Goals](#application-goals)
     * [User Goals](#user-goals)
 * [Application Design](#application-design)
     * [Initial Database Design](#initial-database-design)
@@ -37,7 +37,6 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
     * [Manual Testing](#manual-testing)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
-
 * [Tools](#tools)
 * [Credits](#credits)
 * [Acknowledgment](#acknowledgment)
