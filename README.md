@@ -117,17 +117,20 @@ The Kanban board below shows all the user stories were initially in the 'To Do' 
 
 This project has been developed using Python Django, Bootstrap and Deployed in Heroku. The following are the project requirements in order to run the application.
 
-* Django Rest Framework - a high-level Python web framework
-* Gunicorn - a Web Server Gateway Interface (WSGI) to run Python web applications
+* Cloudinary - Online platform to store images for this application
 * dj_databases_url - a simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application
+* Django Rest Framework allauth - a set of REST API endpoints to handle User Registration and Authentication tasks.
+* Django - a high-level Python web framework
+* Django allauth - integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+* dj3_cloudinary_storage - Django package that facilitates integration with Cloudinary by implementing Django Storage API.
+* Django Filter - use to filter queryset
+* Django Rest Framework - a high-level Python web framework
+* djangorestframework-simplejwt - a JSON Web Token authentication plugin
+* Gunicorn - a Web Server Gateway Interface (WSGI) to run Python web applications
 * Psycopg2 - PostgreSQL database adapter for the Python programming language
 * Pillow - Image processing
-* Cloudinary - Online platform to store images for this application
-* dj3_cloudinary_storage - Django package that facilitates integration with Cloudinary by implementing Django Storage API.
 * PostgreSQL - an open source object-relational database system
-* Django allauth - integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 * Heroku - a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
-* Bootstrap v4 - an open-source CSS framework directed at responsive, mobile-first front-end web development.
 
 *[Back to Contents](#table-of-contents)*
 
@@ -550,7 +553,6 @@ The tools used to carry out the development and deployment on this project are:
 development framework for the creation of websites and web apps
 * [Djano Rest Framework](https://www.django-rest-framework.org/) - Home for Django Rest Framework
 * [Django Documentation](https://docs.djangoproject.com/en/4.0/) - for research and instructions
-* [Select Dropdown in React JS With Fetched Data From API](https://www.youtube.com/watch?v=1cYnbYVAi_E) - for create a select dropdown option
 * [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
 * [Code Institute](https://codeinstitute.net/) - Full Stack Framework tutorials
 
