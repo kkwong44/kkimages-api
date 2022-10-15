@@ -6,6 +6,8 @@ This platform also can be used to share photography experiences, techniques, loo
 
 Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live site.
 
+Click [here](https://kkimages-drf-api.herokuapp.com/) to access the backend of the live site.
+
 *Screenshot - Mockup on KKImages App, generated from [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)*
 
 ![Screenshot on Mockup](readme/images/site-mockup.png)
@@ -37,6 +39,9 @@ Click [here](https://kkimages.herokuapp.com/) to access the frontend of the live
     * [Manual Testing](#manual-testing)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
+    * [Initial Deployment Settings](#initial-deployment-settings)
+    * [Final Deployment Settings](#final-deployment-settings)
+    * [Deploy to Heroku](#deploy-to-heroku)
 * [Tools](#tools)
 * [Credits](#credits)
 * [Acknowledgment](#acknowledgment)
@@ -407,7 +412,7 @@ The following are the test cases and the test scripts can be found in the source
 
 All test ran successfully.
 
-1 Test cases for albums
+**1 Test cases for albums**
 * Test Case 1: can list albums
 * Test Case 2: logged in user can create album
 * Test Case 3: logged in user can create album with upload image
@@ -422,7 +427,7 @@ All test ran successfully.
 * Test Case 12: logged out user can't delete album
 * Test Case 13: user can delete own album and contents
 
-2 Test cases for comments
+**2 Test cases for comments**
 * Test Case 1: can list comments
 * Test Case 2: logged in user can create comment
 * Test Case 3: logged out user can't create comment
@@ -432,7 +437,7 @@ All test ran successfully.
 * Test Case 7: user can't update another user comment
 * Test Case 8: logged out user can't update comment
 
-3 Test cases for contacts
+**3 Test cases for contacts**
 * Test Case 1: can list contacts
 * Test Case 2: can retrieve contact using valid id
 * Test Case 3: can't retrieve contact using invalid id
@@ -443,7 +448,7 @@ All test ran successfully.
 * Test Case 8: user can't delete another user contact
 * Test Case 9: logged out user can't delete contact
 
-4 Test cases for followers
+**4 Test cases for followers**
 * Test Case 1: can list followers
 * Test Case 2: logged in user can follow
 * Test Case 3: logged in user can follow multiple
@@ -453,7 +458,7 @@ All test ran successfully.
 * Test Case 7: user can't unfollow another user followers
 * Test Case 8: logged out user can't unfollow user
 
-5 Test cases for likes
+**5 Test cases for likes**
 * Test Case 1: can list likes
 * Test Case 2: logged in user can create like
 * Test Case 3: logged out user can't create like
@@ -463,7 +468,7 @@ All test ran successfully.
 * Test Case 7: user can't delete another user like
 * Test Case 8: logged out user can't delete like
 
-6 Test cases for photos
+**6 Test cases for photos**
 * Test Case 1: can list photos
 * Test Case 2: logged in user can create photo
 * Test Case 3: logged out user can't create photo
@@ -476,7 +481,7 @@ All test ran successfully.
 * Test Case 10: user can't delete another user photo
 * Test Case 11: logged out user can't delete photo
 
-7 Test cases for profiles
+**7 Test cases for profiles**
 * Test Case 1: can list profiles
 * Test Case 2: logged out user can login
 * Test Case 3: inavalid login
@@ -524,6 +529,71 @@ At the beginning of the project, a simple skeleton Django project was deployed t
 The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
 
 It is import to check all settings and requirements before deploying the final version to Heroku. This is to ensure all security, debug mode are set correctly and allows the frontend to access to this site.
+
+### Initial Deployment Settings
+
+At the beginning of the project.
+* Create a Heroku app with Postgres
+* Install Postgres and Gunicorn
+* Configure Postgres and Gunicorn in the settings file
+* Update secret key in settings file and added in the env file
+* Create a Procfile with the following contents
+    * release: python manage.py makemigrations && python manage.py migrate
+    * web: gunicorn drf_api.wsgi
+
+Push code to Github and deploy to heroku as below.
+
+### Final Deployment Settings
+
+The following were carried out before the final application is deploy to Heroku.
+* Setup JWT Tokens
+* Add the root route to the application
+* Set pagination page size in settings
+* Add JSON renderer in settings
+* Set date and time formatting in settings
+
+The settings file need to be updated as follows:
+* ALLOWED_HOSTS = ['ALLOWED_HOST', 'localhost']
+    * ALLOWED_HOST is the Heroku application config variable that referring the host url. In this case “kkimages-drf-api.herokuapp.com”
+* Install CORS (pip install django-cors-headers) and add the following:
+    * 'corsheaders', in the INSTALLED_APPS section
+	* 'corsheaders.middleware.CorsMiddleware', in the MIDDLEWARE list
+* Add the following:
+	* if 'CLIENT_ORIGIN' in os.environ:
+    * CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN')]
+    * else:
+    * CORS_ALLOWED_ORIGIN_REGEXES =
+    * [r"^https://.*\.gitpod\.io$",]
+    * CORS_ALLOW_CREDENTIALS = True
+    * JWT_AUTH_SAMESITE = 'None'
+
+* Replace the following
+    * SECRET_KEY = os.environ.get('SECRET_KEY')
+    * DEBUG = 'DEV' in os.environ
+
+Make sure the env.py have been setup correctly with following settings:
+* os.environ['CLOUDINARY_URL'] = 'fromCloudinaryProfile'
+* os.environ["SECRET_KEY"] = 'randomValues'
+* os.environ['DEV'] = '1'
+
+Update the requirements file (pip freeze > requirements.txt)
+
+Push the latest code to Github and deploy to heroku.
+
+### Deploy to Heroku
+Navigate to config var settings and add the following config vars with correct values.
+
+* ALLOWED_HOST = kkimages-drf-api.herokuapp.com
+* CLIENT_ORIGIN = https://kkimages.herokuapp.com
+* CLIENT_ORIGIN_DEV = url from development
+* CLOUDINARY_URL = from cloudinary profile
+* DATABASE_URL = automatically allocated by heroku
+* DISABLE_COLLECTSTATIC = 1
+* SECRET_KEY = value set in your env.py
+
+In the deploy section, connect github project and manually deploy.
+
+Successfully deploy message will be shown in the log and click open app. It should take you to the root page of the application.
 
 ***[User Story #16 Deploy final project to Heroku](readme/user-stories/api-user-stories-16.jpg)***
 
