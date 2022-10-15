@@ -24,7 +24,7 @@ Click [here](https://kkimages-drf-api.herokuapp.com/) to access the backend of t
         * [Kanban Board](#kanban-board)
 * [Project Requirements](#project-requirements)
 * [Features](#features)
-    * [Application Enviornment Setup](#application-environment-setup)
+    * [Application Environment Setup](#application-environment-setup)
     * [Profiles app](#profiles-app)
     * [Albums app](#albums-app)
     * [Photos app](#photos-app)
@@ -86,7 +86,7 @@ The models of the database design have been adapted and modified from the Code I
 
 There are 8 tables - User, Profile, Album, Photo, Comment, Like, Follower and Contact.
 
-*Database Deisgn*
+*Database Design*
 ![Database Design](readme/images/database-models.jpg)
 
 ### Design Approach
@@ -170,7 +170,7 @@ Based on the design, this application will be used to serve a community that hav
 
 ### Application Environment Setup
 
-From the database design we have 8 tables and they will be developed under Django Rest Framework with Postgres database to 7 seperate apps and use Cloudinary to hold the images for this application. Finally, the application will be deployed to Heroku.
+From the database design we have 8 tables and they will be developed under Django Rest Framework with Postgres database to 7 separate apps and use Cloudinary to hold the images for this application. Finally, the application will be deployed to Heroku.
 
 To build this application we start with installing the components, setting up the basic environment and deploy to Heroku.
 
@@ -262,7 +262,7 @@ Detail view created for
 
 ### Photos app
 
-This app will be linked to the Django User model "owner" and Album model. The purpose of this app is to hold the photo data and photo image file reference on Cloudinary. The image file also has a validation to limit the size that can be uploaded to Cloudinary. The limit are less than 2MB and below 4096px x 4096px. Additional serialized fields will be also available on this model.
+This app will be linked to the Django User model "owner" and Album model. The purpose of this app is to hold the photo data and photo image file reference on Cloudinary. The image file also has a validation to limit the size that can be uploaded to Cloudinary. The limit is less than 2MB and below 4096px x 4096px. Additional serialized fields will be also available on this model.
 
 *Photo model*
 
@@ -360,9 +360,9 @@ Detail view created for
 
 This app will be linked to the Django User model "owner". The purpose of this app is to hold data about the contact details. The contact list will be sorted by department id and the company details will always be the first record. Additional serialized fields will be also available on this model.
 
-*Conatct model*
+*Contact model*
 
-![Conatct](readme/images/model-contact.jpg)
+![Contact](readme/images/model-contact.jpg)
 
 Serialized and additional fields to this model
 * owner - owner user id
@@ -393,7 +393,7 @@ This application can be developed further in future with the following addition 
 
 pep8 is a tool to check Python code against some of the style conventions in PEP 8. Unfortunately, pep8 online checker was not available at the time of this project. Thanks for Code Institute to provide a workaround solution. Followed the instruction from code institute all codes have been passed the checker as show below. 
 
-![Conatct](readme/test-results/pep8-results.png)
+![pep8](readme/test-results/pep8-results.png)
 
 *[Back to Contents](#table-of-contents)*
 
@@ -484,7 +484,7 @@ All test ran successfully.
 **7 Test cases for profiles**
 * Test Case 1: can list profiles
 * Test Case 2: logged out user can login
-* Test Case 3: inavalid login
+* Test Case 3: invalid login
 * Test Case 4: can retrieve profile using valid id
 * Test Case 5: can't retrieve profile using invalid id
 * Test Case 6: user can update own profile
@@ -496,7 +496,7 @@ All test ran successfully.
 
 *Test results for all 68 test cases*
 
-![Conatct](readme/test-results/api-auto-tests.png)
+![Test Cases](readme/test-results/api-auto-tests.png)
 
 ### Manual Testing
 
@@ -528,7 +528,7 @@ At the beginning of the project, a simple skeleton Django project was deployed t
 
 The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
 
-It is import to check all settings and requirements before deploying the final version to Heroku. This is to ensure all security, debug mode are set correctly and allows the frontend to access to this site.
+It is import to check all settings and requirements before deploying the final version to Heroku. This is to ensure all security, debug mode is set correctly and allows the frontend to access to this site.
 
 ### Initial Deployment Settings
 
@@ -539,7 +539,7 @@ At the beginning of the project.
 * Update secret key in settings file and added in the env file
 * Create a Procfile with the following contents
     * release: python manage.py makemigrations && python manage.py migrate
-    * web: gunicorn drf_api.wsgi
+    * web: gunicorn kkimages_api.wsgi
 
 Push code to Github and deploy to heroku as below.
 
@@ -552,9 +552,10 @@ The following were carried out before the final application is deploy to Heroku.
 * Add JSON renderer in settings
 * Set date and time formatting in settings
 
-The settings file need to be updated as follows:
+The settings file needs to be updated as follows:
 * ALLOWED_HOSTS = ['ALLOWED_HOST', 'localhost']
-    * ALLOWED_HOST is the Heroku application config variable that referring the host url. In this case “kkimages-drf-api.herokuapp.com”
+    * ALLOWED_HOST is the Heroku application config variable that referring the host url.
+    * In this case “kkimages-drf-api.herokuapp.com”
 * Install CORS (pip install django-cors-headers) and add the following:
     * 'corsheaders', in the INSTALLED_APPS section
 	* 'corsheaders.middleware.CorsMiddleware', in the MIDDLEWARE list
@@ -621,7 +622,7 @@ The tools used to carry out the development and deployment on this project are:
 * This project was inspired and adapted from Code Institute Django Rest Framework Moment project
 * [Template](https://github.com/Code-Institute-Org/gitpod-full-template) - created by Code Institute
 development framework for the creation of websites and web apps
-* [Djano Rest Framework](https://www.django-rest-framework.org/) - Home for Django Rest Framework
+* [Django Rest Framework](https://www.django-rest-framework.org/) - Home for Django Rest Framework
 * [Django Documentation](https://docs.djangoproject.com/en/4.0/) - for research and instructions
 * [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
 * [Code Institute](https://codeinstitute.net/) - Full Stack Framework tutorials
